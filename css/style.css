@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+body {
+  font-family: Roboto;
+  color: #31373d;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#main-container {
+  height: 100vh;
+  overflow: hidden;
+  border-top: 3vh solid #e1251b;
+}
+
+header {
+  background: #e6e7e8;
+  padding: 10px;
+  border-bottom: 2px solid #31373d;
+}
+
+header h1 {
+  font-family: Oswald;
+  font-weight: 500;
+}
+
+header h1 span {
+  color: #e1251b;
+  font-weight: 700;
+}
+
+.btn-faq {
+  background: #e1251b;
+  color: #fff;
+  font-family: Oswald;
+  font-weight: 500;
+  letter-spacing: 1.75px;
+}
+
+.btn-upload {
+  background: #e1251b;
+  color: #fff;
+  font-family: Oswald;
+  font-weight: 500;
+  letter-spacing: 1.75px;
+  padding: 1.5rem;
+}
+
+#vid-container {
+  width: 640px;
+  height: 360px;
+  outline: 3px solid #31373d;
+  margin: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+  #vid-container {
+    width: 300px;
+    height: 240px;
+    outline: none;
+    margin: 15px;
+  }
+
+  #vid-container video {
+    width: 300px;
+    height: 240px;
+  }
+}
+
+/********** File Input Style starts here ********/
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile + label {
+  max-width: 100%;
+  font-size: 1.25rem;
+  /* 20px */
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  padding: 0.625rem 1.25rem;
+  /* 10px 20px */
+}
+
+.no-js .inputfile + label {
+  display: none;
+}
+
+.inputfile:focus + label,
+.inputfile.has-focus + label {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile + label svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  fill: currentColor;
+  margin-top: -0.25em;
+  /* 4px */
+  margin-right: 0.25em;
+  /* 4px */
+}
+
+.inputfile-2 + label {
+  color: #e1251b;
+  border: 2px solid currentColor;
+}
+
+.inputfile-2:focus + label,
+.inputfile-2.has-focus + label,
+.inputfile-2 + label:hover {
+  color: #722040;
+}
+
+footer {
+  height: 3vh;
+  background: #31373d;
+  color: #fff;
+  font-size: smaller;
+}
+
+footer a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#spinner-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* creating css loader */
+#spinner:not([hidden]) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+#spinner::after {
+  content: "";
+  width: 80px;
+  height: 80px;
+  border: 2px solid #f3f3f3;
+  border-top: 3px solid #f25a41;
+  border-radius: 100%;
+  will-change: transform;
+  animation: spin 1s infinite linear;
+  z-index: 10000;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
